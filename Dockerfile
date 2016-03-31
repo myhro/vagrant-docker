@@ -1,7 +1,10 @@
 FROM debian:jessie
 
 RUN apt-get update
-RUN apt-get install -q -y openssh-server sudo
+RUN apt-get install -q -y locales openssh-server sudo
+
+RUN sed -i '/^# en_US.UTF-8 UTF-8/{s/^# //}' /etc/locale.gen
+RUN locale-gen
 
 RUN useradd --create-home --shell /bin/bash vagrant
 RUN echo vagrant:vagrant | chpasswd
