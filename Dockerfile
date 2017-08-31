@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 
 RUN apt-get update
 RUN apt-get install -q -y locales openssh-server sudo

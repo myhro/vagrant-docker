@@ -12,7 +12,7 @@ Assuming Docker and Vagrant are properly installed, the process isn't different 
     vagrant up
     vagrant ssh
 
-By default it pulls the image `debian:jessie`. This can be easily changed (in the `Dockerfile`) to another release of [Debian][debian] or even one from [Ubuntu][ubuntu] (although there is no guarantee, as this wasn't tested).
+By default it pulls the image `debian:stretch`. This can be easily changed (in the `Dockerfile`) to another release of [Debian][debian] or even one from [Ubuntu][ubuntu] (although there is no guarantee, as this wasn't tested).
 
 ## References
 
