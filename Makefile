@@ -1,2 +1,2 @@
-build:
-	docker build -t vagrant-debian:stretch .
+debian:
+	docker build -f debian.Dockerfile -t vagrant-debian:stretch .
