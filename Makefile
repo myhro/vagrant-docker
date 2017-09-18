@@ -1,3 +1,6 @@
+centos:
+	docker build -f centos.Dockerfile -t vagrant-centos:6 .
+
 debian:
 	docker build -f debian.Dockerfile -t vagrant-debian:stretch .
 
