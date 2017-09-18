@@ -1,18 +1,32 @@
 Vagrant with Docker
 ===================
 
-This repository contains a `Dockerfile` and a `Vagrantfile`, needed to run the official [Debian Docker image][debian-docker-hub] on [Vagrant][vagrant] with the [Docker][docker] provider.
+This repository contains a few `Dockerfile`s. They can be used to generated images with SSH configured to run on [Vagrant][vagrant] with the [Docker][docker] provider.
 
 ## Usage
 
-Assuming Docker and Vagrant are properly installed, the process isn't different from running an image from another Vagrant provider:
+They can be built with `Makefile` commands like:
 
-    git clone https://github.com/myhro/vagrant-docker.git
-    cd vagrant-docker/
-    vagrant up
-    vagrant ssh
+    make debian
 
-By default it pulls the image `debian:stretch`. This can be easily changed (in the `Dockerfile`) to another release of [Debian][debian] or even one from [Ubuntu][ubuntu] (although there is no guarantee, as this wasn't tested).
+
+There's also support for `centos` and `ubuntu` images.
+
+A `Vagrantfile` like the following can then be used:
+
+``` ruby
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV["VAGRANT_DEFAULT_PROVIDER"] = "docker"
+
+Vagrant.configure("2") do |config|
+  config.vm.provider "docker" do |d|
+    d.image = "vagrant-debian:stretch"
+    d.has_ssh = true
+  end
+end
+```
 
 ## References
 
