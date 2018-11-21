@@ -1,5 +1,5 @@
 alpine:
-	docker build -f alpine.Dockerfile -t vagrant-alpine:3.8 .
+	docker build -f alpine.Dockerfile -t vagrant-alpine .
 
 centos:
 	docker build -f centos.Dockerfile -t vagrant-centos:6 .

@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine
 
 RUN apk update
 RUN apk add bash openssh-server shadow sudo
