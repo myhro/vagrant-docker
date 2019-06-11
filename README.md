@@ -7,10 +7,10 @@ This repository contains a few `Dockerfile`s. They can be used to generated imag
 
 They can be built with `Makefile` commands like:
 
-    make debian
+    make ubuntu
 
 
-There's also support for `centos` and `ubuntu` images.
+There's also support for `centos` images.
 
 A `Vagrantfile` like the following can then be used:
 
@@ -22,7 +22,7 @@ ENV["VAGRANT_DEFAULT_PROVIDER"] = "docker"
 
 Vagrant.configure("2") do |config|
   config.vm.provider "docker" do |d|
-    d.image = "vagrant-debian:stretch"
+    d.image = "vagrant-ubuntu:bionic"
     d.has_ssh = true
   end
 end
@@ -30,13 +30,10 @@ end
 
 ## References
 
-[building a vagrant ready docker image][vagrant-docker-guide] by [Tasos Latsas][tlatsas]
+- [building a vagrant ready docker image][vagrant-docker-guide] by [Tasos Latsas][tlatsas]
 
 
-[debian-docker-hub]: https://hub.docker.com/_/debian/
-[debian]: https://www.debian.org/
 [docker]: https://www.docker.com/
 [tlatsas]: https://github.com/tlatsas
-[ubuntu]: http://www.ubuntu.com/
 [vagrant-docker-guide]: http://www.kodama.gr/2015/05/09/building-a-vagrant-ready-docker-image/
 [vagrant]: https://www.vagrantup.com/
