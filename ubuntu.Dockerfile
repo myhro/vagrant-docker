@@ -1,7 +1,7 @@
 FROM ubuntu:bionic
 
 RUN apt-get update
-RUN apt-get install -q -y locales openssh-server sudo
+RUN apt-get install -q -y locales openssh-server sudo tzdata
 
 RUN sed -i '/^# en_US.UTF-8 UTF-8/{s/^# //}' /etc/locale.gen
 RUN locale-gen
