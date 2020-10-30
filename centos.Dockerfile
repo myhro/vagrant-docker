@@ -1,8 +1,9 @@
-FROM centos:7
+FROM centos:8
 
-RUN yum install -y openssh-server sudo
+RUN yum install -y glibc-langpack-en glibc-locale-source openssh-server sudo
 
-RUN ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t dsa
+RUN ssh-keygen -f /etc/ssh/ssh_host_ecdsa_key -N '' -t ecdsa
+RUN ssh-keygen -f /etc/ssh/ssh_host_ed25519_key -N '' -t ed25519
 RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
 
 RUN useradd --create-home --shell /bin/bash vagrant
@@ -17,6 +18,7 @@ RUN chown -R vagrant:vagrant /home/vagrant/.ssh
 RUN chmod 0600 /home/vagrant/.ssh/authorized_keys
 RUN chmod 0700 /home/vagrant/.ssh
 
+RUN rm -f /run/nologin
 RUN mkdir /var/run/sshd
 CMD ["/usr/sbin/sshd", "-D", "-e"]
 EXPOSE 22
