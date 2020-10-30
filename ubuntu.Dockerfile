@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
 RUN apt-get update
 RUN apt-get install -q -y locales openssh-server sudo tzdata

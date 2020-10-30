@@ -22,7 +22,7 @@ ENV["VAGRANT_DEFAULT_PROVIDER"] = "docker"
 
 Vagrant.configure("2") do |config|
   config.vm.provider "docker" do |d|
-    d.image = "vagrant-ubuntu:bionic"
+    d.image = "vagrant-ubuntu:focal"
     d.has_ssh = true
   end
 end
