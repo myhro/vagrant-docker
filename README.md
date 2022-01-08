@@ -9,9 +9,6 @@ They can be built with `Makefile` commands like:
 
     make ubuntu
 
-
-There's also support for `centos` images.
-
 A `Vagrantfile` like the following can then be used:
 
 ``` ruby
